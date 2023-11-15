@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홈페이지</title>
-    <link href="mystyle.css">
+    <link rel="stylesheet" href="mystyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <style type="text/css">
         #wrapper {
             width: 980px;
-            margin: 0 auto;
+            margin: 0px auto;
             padding: 20px;
             border-style: dotted;
             border-radius: 20px;
@@ -24,35 +24,11 @@
             margin-bottom: 20px;
             padding: 20px;
             border: 1px solid #828282;
-            background-color: #ffffff; /* Add a background color */
+            background-color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #header h2 {
-            color: #333; /* Adjust text color */
-            font-size: 48px; /* Increase font size further */
-        }
-
-        .search-container {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        input[type="text"] {
-            padding: 5px;
-            font-size: 14px;
-        }
-
-        button {
-            padding: 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
         }
 
         #nav {
@@ -99,20 +75,36 @@
         #footer {
             clear: both;
             border-style: groove;
-            margin: 0 5px;
+            margin: 0px 5px;
             background-color: #fff;
             color: black;
             text-align: center;
             border: 1px solid #828282;
         }
 
-        #header {
+        .search-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            background-color: #fff;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        * {
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 23px;
+            letter-spacing: 2px;
         }
     </style>
     <script>
@@ -120,7 +112,7 @@
             var header = document.getElementById('header');
 
             setInterval(function () {
-                var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
                 header.style.backgroundColor = randomColor;
             }, 2000);
         });
@@ -130,10 +122,6 @@
     <div id="wrapper">
         <div id="header">
             <h2> 여행가자 </h2>
-            <div class="search-container">
-                <input type="text" placeholder="Search...">
-                <button type="button">Search</button>
-            </div>
         </div>
         <div id="nav">
             <h2>Menu</h2>
@@ -148,24 +136,15 @@
         <div id="section">
             <h2>수업내용</h2>
             <hr>
-            <!-- Your links here -->
+            <!-- 강의 목록 등 추가 내용 -->
         </h2>
     </div>
-    <div id="aside_right">
+    <div id ="aside_right">
         <p>AD</p>
     </div>
     <div id="aside_bottom">
         <p> aside_bottom </p>
     </div>
-    <div id="footer">
-        <h5> <strong>https://github.com/yhb2992/yoons</strong>| <copyRight>All right is reserved</copyRight></h5>
-    </div>
-    <style type="text/css">
-        * {
-            font-family: 'Nanum Pen Script', cursive;
-            font-size: 23px;
-            letter-spacing: 2px;
-        }
-    </style>
-</body>
-</html>
+    
+    <div id ="footer">
+        <h5> <strong>https://github.com/yhb2992/yoons</strong>| <copyRight>All right is reserved</copyRight></

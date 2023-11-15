@@ -5,3 +5,14 @@
     font-weight: 700;
     font-style: normal;
 }
+#header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px; /* Remove extra semicolon here */
+    border: 1px solid #828282;
+    background-color: #ffffff; /* Add a background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
