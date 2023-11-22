@@ -67,7 +67,7 @@
         <a href="#theme">테마</a>
         <a href="#region">지역</a>
         <a href="#map">여행지도</a>
-        <a href="#practice">실습</a>
+        <a href="#" onclick="goToNewPracticePage()">실습</a>
     </div>
 
     
@@ -82,7 +82,43 @@
         </div>
     </div>
 
+    <div id="section" style="display: none;">
+        <h2>수업내용</h2>
+        <hr>
+        <a href="9월 6일 3교시.html">9월 6일 3교시 실습</a><br>
+        <a href="9월 6일 3교시2.html">9월 6일 3교시 실습2-블럭태그/인라인태그</a></br>
+        <a href="9월 13일 1교시.html">9월 13일 1교시 실습</a></br>
+        <a href="10월 4일 1교시.html">10월 4일 1교시 실습</a></br>
+        <a href="10월 4일 1교시2.html">10월 4일 1교시 실습</a></br>
+        <a href="10월 4일 2교시.html">10월 4일 1교시 실습</a></br>
+        <a href="10월 4일 2교시2.html">10월 4일 1교시 실습</a></br>
+        <a href="10월 11일 1교시.html">10월 11일 1교시 실습</a></br>
+        <a href="10월 11일 1교시2.html">10월 11일 1교시 실습</a></br>
+        <a href="10월 11일 2교시.html">10월 11일 2교시 실습</a></br>
+        <a href="10월 11일 2교시2.html">10월 11일 2교시 실습</a></br>
+        <a href="11월 1일 1교시.html">11월 1일 1교시 실습</a></br>
+        <a href="11월 1일 1교시2.html">11월 1일 1교시 실습</a></br>
+        <a href="11월 1일 2교시.html">11월 1일 2교시 실습</a></br>
+        <a href="11월 1일 2교시2.html">11월 1일 2교시 실습</a></br>
+        <a href="11월 8일 1교시.html">11월 8일 1교시 실습</a></br>
+        <a href="11월 8일 1교시2.html">11월 1일 2교시 실습</a></br>
+        <a href="11월 8일 2교시.html">11월 8일 1교시 실습</a></br>
+        <a href="11월 8일 2교시2.html">11월 8일 2교시 실습</a></br>
+        <a href="11월 8일 2교시3.html">11월 8일 2교시 실습</a></br>
+        <a href="11월 8일 3교시.html">11월 8일 3교시 실습</a></br>
+        </h2>
+        </div>
+
     <script>
+        function createNewPracticePage() {
+            // 새로운 실습 페이지 링크 생성
+            var newPracticeLink = document.createElement('a');
+            newPracticeLink.href = '새로운_실습_페이지.html'; // 새로운 페이지의 경로 설정
+            newPracticeLink.textContent = '새로운 실습 페이지';
+
+            // 생성한 링크를 body에 추가
+            document.body.appendChild(newPracticeLink);
+        }
         // 가상의 여행지 및 코스 데이터 (실제 데이터랩 API를 사용하려면 해당 API의 사용 방법을 숙지)
         const travelData = [
             { title: '해변에서의 휴가', description: '해변에서의 여유로운 휴가를 즐겨보세요.', image: 'https://source.unsplash.com/1600x900/?beach' },
@@ -107,36 +143,6 @@
             recommendationContainer.appendChild(card);
         });
     </script>
-    <div class="card-container">
-    
-        <div class="card">
-            <img src="https://source.unsplash.com/1600x900/?beach" class="card-img-top" alt="Beach Image">
-            <div class="card-body">
-                <h5 class="card-title">해변 지역</h5>
-                <p class="card-text">해변에서의 여유로운 휴가를 즐겨보세요.</p>
-                <a href="#" class="btn btn-primary">자세히 보기</a>
-            </div>
-        </div>
-
-        
-        <div class="card">
-            <img src="https://source.unsplash.com/1600x900/?mountain" class="card-img-top" alt="Mountain Image">
-            <div class="card-body">
-                <h5 class="card-title">산악 지역</h5>
-                <p class="card-text">신선한 공기와 멋진 풍경의 산악 여행을 즐겨보세요.</p>
-                <a href="#" class="btn btn-primary">자세히 보기</a>
-            </div>
-        </div>
-
-        
-        <div class="card">
-            <img src="https://source.unsplash.com/1600x900/?city" class="card-img-top" alt="City Image">
-            <div class="card-body">
-                <h5 class="card-title">도시 여행</h5>
-                <p class="card-text">도심 속에서 다양한 문화를 체험하세요.</p>
-                <a href="#" class="btn btn-primary">자세히 보기</a>
-            </div>
-        </div>
     </div>
 </body>
 

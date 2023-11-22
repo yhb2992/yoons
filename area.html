@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>여행 추천 홈페이지</title>
+    <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <style>
+        /* 구성요소 */
+        .hero-section {
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .recommendation-card {
+            width: 30rem;
+            margin: 50px;
+            transition: transform 0.3s ease-in-out;
+            display: inline-block;
+        }
+        
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    }
+
+        .recommendation-card:hover {
+            transform: scale(1.05);
+        }
+
+        .recommendation-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #banner {
+            display: flex;
+            justify-content: space-around;
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        #banner a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #banner a:hover {
+            transform: scale(1.1);
+        }
+
+        .hero-section h2,
+        .hero-section ul {
+            color: white;
+        }
+
+        .hero-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-section ul li {
+            margin: 5px;
+        }
+
+        /* 수정된 스타일 */
+        .hero-section h2 {
+            color: black; /* "지역" 텍스트를 검은색으로 설정 */
+        }
+
+        .card-title,
+        .card-text {
+            color: black; /* 카드 내 텍스트는 검정색으로 지정 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <a href="index.html">홈</a>
+        <a href="theme.html">테마</a>
+        <a href="area.html">지역</a>
+        <a href="#map">여행지도</a>
+        <a href="#practice">실습</a>
+    </div>
+
+    <div class="jumbotron text-center" style="background-color: #333; color: #fff;">
+        <h1 class="display-4">지역</h1>
+        <p class="lead">대한민국 지역 정보를 한곳에</p>
+    </div>
+
+    <div class="hero-section">
+        <h2>대한민국의 주요 도시</h2>
+        <ul>
+            <li><a href="#" onclick="showCityCards('seoul', seoulCardData)">서울</a></li>
+            <li><a href="#" onclick="showCityCards('busan', busanCardData)">부산</a></li>
+            <li><a href="#" onclick="showCityCards('daegu', daeguCardData)">대구</a></li>
+            <li><a href="#" onclick="showCityCards('incheon', incheonCardData)">인천</a></li>
+            <li><a href="#" onclick="showCityCards('gwangju', gwangjuCardData)">광주</a></li>
+            <li><a href="#" onclick="showCityCards('daejeon', daejeonCardData)">대전</a></li>
+            <li><a href="#" onclick="showCityCards('uisan', uisanCardData)">울산</a></li>
+            <li><a href="#" onclick="showCityCards('sejong', sejongCardData)">세종</a></li>
+            <li><a href="#" onclick="showCityCards('gyeonggi', gyeonggiCardData)">경기</a></li>
+            <li><a href="#" onclick="showCityCards('chungbuk', chungbukCardData)">충북</a></li>
+            <li><a href="#" onclick="showCityCards('chungnam', chungnamCardData)">충남</a></li>
+            <li><a href="#" onclick="showCityCards('jeonbuk', jeonbukCardData)">전북</a></li>
+            
+        </ul>
+    </div>
+    <div class="card-container" id="seoulCards" style="display: none;">
+    </div>
+
+    <div class="card-container" id="busanCards" style="display: none;">
+    </div>
+
+    <div class="card-container" id="daeguCards" style="display: none;">
+    </div>
+    
+    <div class="card-container" id="incheonCards" style="display: none;"> 
+    </div>
+
+    <div class="card-container" id="gwangjuCards" style="display: none;"> 
+    </div>
+
+    <div class="card-container" id="daejeonCards" style="display: none;"> 
+    </div>
+
+    <div class="card-container" id="uisanCards" style="display: none;"> 
+    </div>
+    
+    <div class="card-container" id="sejongCards" style="display: none;"> 
+    </div>
+    
+    <div class="card-container" id="gyeonggiCards" style="display: none;"> 
+    </div>
+
+    <div class="card-container" id="gangwonCards" style="display: none;"> 
+    </div>
+
+    <div class="card-container" id="chungbukCards" style="display: none;"> 
+    </div>
+    
+    <div class="card-container" id="chungnamCards" style="display: none;"> 
+    </div>
+
+    <div class="card-container" id="jeonbukCards" style="display: none;"> 
+    </div>
+
+    <script>
+        function showCityCards(city, cityCardData) {
+            hideAllCityCards();
+            
+            
+            const cityCardContainer = document.getElementById(`${city}Cards`);
+
+
+            
+            while (cityCardContainer.firstChild) {
+        cityCardContainer.removeChild(cityCardContainer.firstChild);
+    }
+
+
+
+        cityCardData.forEach(data => {
+            const card = document.createElement('div');
+            card.className = 'card recommendation-card';
+            card.innerHTML = `
+                <img src="${data.image}" class="card-img-top" alt="${data.title} Image">
+                <div class="card-body">
+                    <h5 class="card-title">${data.title}</h5>
+                    <p class="card-text">${data.description}</p>
+                    <a href="#" class="btn btn-primary">자세히 보기</a>
+                </div>
+            `;
+
+                cityCardContainer.appendChild(card);
+            });
+
+            
+            cityCardContainer.style.display = 'flex';
+        }
+
+        function hideAllCityCards() {
+            
+            const allCityCardContainers = document.querySelectorAll('.card-container');
+            allCityCardContainers.forEach(container => {
+                container.style.display = 'none';
+            });
+        }
+
+        const seoulCardData = [
+            { title: '서울 공모전', description: '서울에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?seoul' },
+            { title: '서울 명소', description: '서울의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?seoul-attractions' },
+            { title: '서울 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 서울', image: 'https://source.unsplash.com/1600x900/?seoul-culture' }
+        ];
+
+        const busanCardData = [
+            { title: '부산 공모전', description: '부산에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?busan' },
+            { title: '부산 명소', description: '부산의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?busan-attractions' },
+            { title: '부산 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 부산', image: 'https://source.unsplash.com/1600x900/?busan-culture' }
+        ];
+        const daeguCardData = [
+            { title: '대구 공모전', description: '대구에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?daegu' },
+            { title: '대구 명소', description: '대구의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?daegu-attractions' },
+            { title: '대구 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 대구', image: 'https://source.unsplash.com/1600x900/?daegu-culture' }
+        ];
+        const incheonCardData = [
+            { title: '인천 공모전', description: '인천에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?incheon' },
+            { title: '인천 명소', description: '인천의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?incheon-attractions' },
+            { title: '인천 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 인천', image: 'https://source.unsplash.com/1600x900/?incheon-culture' }
+        ];
+        const gwangjuCardData = [
+            { title: '광주 공모전', description: '광주에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?gwangju' },
+            { title: '광주 명소', description: '광주의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?gwangju-attractions' },
+            { title: '광주 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 광주', image: 'https://source.unsplash.com/1600x900/?gwangju-culture' }
+        ];
+        const daejeonCardData = [
+            { title: '대전 공모전', description: '대전에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?daejeon' },
+            { title: '대전 명소', description: '대전의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?daejeon-attractions' },
+            { title: '대전 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 대전', image: 'https://source.unsplash.com/1600x900/?daejeon-culture' }
+        ];
+        const uisanCardData = [
+            { title: '울산 공모전', description: '울산에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?uisan' },
+            { title: '울산 명소', description: '울산의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?uisan-attractions' },
+            { title: '울산 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 울산', image: 'https://source.unsplash.com/1600x900/?uisan-culture' }
+        ];
+        const sejongCardData = [
+            { title: '세종 공모전', description: '세종에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?sejong' },
+            { title: '세종 명소', description: '세종의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?sejong-attractions' },
+            { title: '세종 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 세종', image: 'https://source.unsplash.com/1600x900/?sejong-culture' }
+        ];
+        const gyeonggiCardData = [
+            { title: '경기 공모전', description: '경기에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?gyeonggi' },
+            { title: '경기 명소', description: '경기의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?gyeonggi-attractions' },
+            { title: '경기 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 경기', image: 'https://source.unsplash.com/1600x900/?gyeonggi-culture' }
+        ];
+        const gangwonCardData = [
+            { title: '강원 공모전', description: '강원에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?gangwon' },
+            { title: '강원 명소', description: '강원의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?gangwon-attractions' },
+            { title: '강원 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 강원', image: 'https://source.unsplash.com/1600x900/?gangwon-culture' }
+        ];
+        const chungbukCardData = [
+            { title: '충북 공모전', description: '충북에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?chung-cheongbukdo' },
+            { title: '충북 명소', description: '충북의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?chungbuk-attractions' },
+            { title: '충북 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 충북', image: 'https://source.unsplash.com/1600x900/?chungbuk-culture' }
+        ];
+        const chungnamCardData = [
+            { title: '충남 공모전', description: '충남에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?chungnam' },
+            { title: '충남 명소', description: '충남의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?chungnam-attractions' },
+            { title: '충남 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 충남', image: 'https://source.unsplash.com/1600x900/?chungnam-culture' }
+        ];
+        const jeonbukCardData = [
+            { title: '전북 공모전', description: '전북에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?jeollabukdo' },
+            { title: '전북 명소', description: '전북의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?jeonbuk-attractions' },
+            { title: '전북 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 전북', image: 'https://source.unsplash.com/1600x900/?jeonbuk-culture' }
+        ];
+
+
+        // 초기 로딩 시 서울 카드 표시
+        showCityCards('seoul', seoulCardData);
+    </script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -76,7 +76,7 @@
     <div id="banner">
         <a href="index.html">홈</a>
         <a href="theme.html">테마</a>
-        <a href="#region">지역</a>
+        <a href="area.html">지역</a>
         <a href="#map">여행지도</a>
         <a href="#practice">실습</a>
     </div>
@@ -88,7 +88,7 @@
     <div class="recommendation-section">
         
     </div>
-    <div class="event-section text-center">
+    <div class=".event-section text-center">
         <h2>국내 여행 이벤트&혜택 모아보기</h2>
         <p>다가오는 국내 여행 이벤트 및 특별 혜택을 확인하세요.</p>
         <div id="event-container" class="card-container">
@@ -120,32 +120,6 @@
             `;
     
             eventContainer.appendChild(card);
-        });
-    </script>
-
-    <script>
-        // 가상의 여행지 및 코스 데이터 (실제 데이터랩 API를 사용하려면 해당 API의 사용 방법을 숙지)
-        const travelData = [
-            { title: '해변에서의 휴가', description: '해변에서의 여유로운 휴가를 즐겨보세요.', image: 'https://source.unsplash.com/1600x900/?beach' },
-            { title: '산악 여행', description: '신선한 공기와 멋진 풍경의 산악 여행을 즐겨보세요.', image: 'https://source.unsplash.com/1600x900/?mountain' },
-            { title: '도시 문화 체험', description: '도심 속에서 다양한 문화를 체험하세요.', image: 'https://source.unsplash.com/1600x900/?city' }
-        ];
-
-        const recommendationContainer = document.getElementById('recommendation-container');
-
-        travelData.forEach(data => {
-            const card = document.createElement('div');
-            card.className = 'card recommendation-card';
-            card.innerHTML = `
-                <img src="${data.image}" class="card-img-top" alt="${data.title} Image">
-                <div class="card-body">
-                    <h5 class="card-title">${data.title}</h5>
-                    <p class="card-text">${data.description}</p>
-                    <a href="#" class="btn btn-primary">자세히 보기</a>
-                </div>
-            `;
-
-            recommendationContainer.appendChild(card);
         });
     </script>
 </body>
