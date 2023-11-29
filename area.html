@@ -60,7 +60,7 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
-            margin: 0 15px;
+            margin: 0 30px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
@@ -83,7 +83,7 @@
         }
 
         .hero-section ul li {
-            margin: 5px;
+            margin: 10px;
         }
 
         /* 수정된 스타일 */
@@ -95,6 +95,7 @@
         .card-text {
             color: black; /* 카드 내 텍스트는 검정색으로 지정 */
         }
+        
     </style>
 </head>
 
@@ -103,7 +104,7 @@
         <a href="index.html">홈</a>
         <a href="theme.html">테마</a>
         <a href="area.html">지역</a>
-        <a href="#map">여행지도</a>
+        <a href="map.html">여행지도</a>
         <a href="#practice">실습</a>
     </div>
 
@@ -113,7 +114,7 @@
     </div>
 
     <div class="hero-section">
-        <h2>대한민국의 주요 도시</h2>
+        
         <ul>
             <li><a href="#" onclick="showCityCards('seoul', seoulCardData)">서울</a></li>
             <li><a href="#" onclick="showCityCards('busan', busanCardData)">부산</a></li>
@@ -192,7 +193,7 @@
                 <div class="card-body">
                     <h5 class="card-title">${data.title}</h5>
                     <p class="card-text">${data.description}</p>
-                    <a href="#" class="btn btn-primary">자세히 보기</a>
+                    <a href="${data.detailUrl}" class="btn btn-primary" target="_blank">자세히 보기</a>
                 </div>
             `;
 
@@ -212,23 +213,23 @@
         }
 
         const seoulCardData = [
-            { title: '서울 공모전', description: '서울에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?seoul' },
-            { title: '서울 명소', description: '서울의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?seoul-attractions' },
-            { title: '서울 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 서울', image: 'https://source.unsplash.com/1600x900/?seoul-culture' }
+            { title: '서울 팝업스토어', description: '서울의 팝업스토어', image: 'https://source.unsplash.com/1600x900/?seoul', detailUrl: 'https://blog.naver.com/haechiseoul/223273614761' },
+            { title: '서울 명소', description: '서울 단풍길 99선', image: 'https://source.unsplash.com/1600x900/?seoul-attractions' , detailUrl: 'https://blog.naver.com/haechiseoul/223241851030' },
+            { title: '서울 문화 ', description: '방과후 공연 놀이터', image: 'https://source.unsplash.com/1600x900/?seoul-culture' , detailUrl: 'https://blog.naver.com/goodnowon/223241823357' }
         ];
 
         const busanCardData = [
-            { title: '부산 공모전', description: '부산에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?busan' },
-            { title: '부산 명소', description: '부산의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?busan-attractions' },
-            { title: '부산 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 부산', image: 'https://source.unsplash.com/1600x900/?busan-culture' }
+            { title: '부산 공모전', description: '기념품 전국 공모전', image: 'https://source.unsplash.com/1600x900/?busan' , detailUrl: 'https://blog.naver.com/bsdonggublog/223244273681'},
+            { title: '부산 강좌', description: '남구 캐릭터 포토 조형물', image: 'https://source.unsplash.com/1600x900/?busan-attractions' , detailUrl: 'https://blog.naver.com/bssasanggu/223241881438'},
+            { title: '부산 전시회', description: '2023 바다 미술제', image: 'https://source.unsplash.com/1600x900/?busan-culture' , detailUrl: 'https://blog.naver.com/bskijang/223240789595'}
         ];
         const daeguCardData = [
-            { title: '대구 공모전', description: '대구에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?daegu' },
-            { title: '대구 명소', description: '대구의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?daegu-attractions' },
-            { title: '대구 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 대구', image: 'https://source.unsplash.com/1600x900/?daegu-culture' }
+            { title: '대구 산책', description: '걷기 좋은 무학산', image: 'https://source.unsplash.com/1600x900/?daegu' },
+            { title: '대구 힐링', description: '생각을 담는 정원', image: 'https://source.unsplash.com/1600x900/?daegu-attractions' },
+            { title: '대구 강좌', description: '수성 아트피아 강좌', image: 'https://source.unsplash.com/1600x900/?daegu-culture' }
         ];
         const incheonCardData = [
-            { title: '인천 공모전', description: '인천에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?incheon' },
+            { title: '인천 겨울 섬 여행 추천', description: '인천에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?incheon' },
             { title: '인천 명소', description: '인천의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?incheon-attractions' },
             { title: '인천 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 인천', image: 'https://source.unsplash.com/1600x900/?incheon-culture' }
         ];
