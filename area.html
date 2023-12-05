@@ -14,6 +14,7 @@
     <style>
         /* 구성요소 */
         .hero-section {
+            background-color: rgb(255, 255, 255);
             color: white;
             text-align: center;
             padding: 100px 0;
@@ -27,17 +28,11 @@
         }
 
         .recommendation-card {
-            width: 30rem;
-            margin: 50px;
+            width: 18rem;
+            margin: 20px;
             transition: transform 0.3s ease-in-out;
             display: inline-block;
         }
-        
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-    }
 
         .recommendation-card:hover {
             transform: scale(1.05);
@@ -60,14 +55,20 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
-            margin: 0 30px;
+            margin: 0 15px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
-
         #banner a:hover {
-            transform: scale(1.1);
+        transform: scale(1.1);
         }
+        #event-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
 
         .hero-section h2,
         .hero-section ul {
@@ -217,7 +218,6 @@
             { title: '서울 명소', description: '서울 단풍길 99선', image: 'https://source.unsplash.com/1600x900/?seoul-attractions' , detailUrl: 'https://blog.naver.com/haechiseoul/223241851030' },
             { title: '서울 문화 ', description: '방과후 공연 놀이터', image: 'https://source.unsplash.com/1600x900/?seoul-culture' , detailUrl: 'https://blog.naver.com/goodnowon/223241823357' }
         ];
-
         const busanCardData = [
             { title: '부산 공모전', description: '기념품 전국 공모전', image: 'https://source.unsplash.com/1600x900/?busan' , detailUrl: 'https://blog.naver.com/bsdonggublog/223244273681'},
             { title: '부산 강좌', description: '남구 캐릭터 포토 조형물', image: 'https://source.unsplash.com/1600x900/?busan-attractions' , detailUrl: 'https://blog.naver.com/bssasanggu/223241881438'},
@@ -247,11 +247,6 @@
             { title: '울산 공모전', description: '울산에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?uisan' },
             { title: '울산 명소', description: '울산의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?uisan-attractions' },
             { title: '울산 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 울산', image: 'https://source.unsplash.com/1600x900/?uisan-culture' }
-        ];
-        const sejongCardData = [
-            { title: '세종 공모전', description: '세종에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?sejong' },
-            { title: '세종 명소', description: '세종의 아름다운 명소와 문화체험', image: 'https://source.unsplash.com/1600x900/?sejong-attractions' },
-            { title: '세종 문화 이벤트', description: '다양한 문화 이벤트가 펼쳐지는 세종', image: 'https://source.unsplash.com/1600x900/?sejong-culture' }
         ];
         const gyeonggiCardData = [
             { title: '경기 공모전', description: '경기에서 개최되는 흥미로운 공모전', image: 'https://source.unsplash.com/1600x900/?gyeonggi' },
